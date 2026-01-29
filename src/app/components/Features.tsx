@@ -76,7 +76,7 @@ const Features = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
 
         {/*header*/}
-        <div className="text-center mb-20 space-y-6">
+        {/* <div className="text-center mb-20 space-y-6">
           <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
             The modern standard
           </span>
@@ -87,8 +87,39 @@ const Features = () => {
           <p className="text-gray-400 max-w-2xl mx-auto md:text-sm text-xs">
             A platform you can rely on to reach your audience
           </p>
-        </div>
-
+        </div> */}
+          <div className="mb-20">
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-purple-400 text-lg font-medium mb-4 block"
+                            >
+                                How it works
+                            </motion.span>
+        
+                            <div className="flex flex-col lg:flex-col gap-12 justify-between">
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 }}
+                                    className="text-5xl md:text-6xl text-white max-w-3xl tracking-tighter leading-[1.1]"
+                                >
+                                    what you can do what you
+                                </motion.h2>
+        
+                                <motion.p
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 }}
+                                    className="text-gray-400 text-lg max-w-xl leading-relaxed"
+                                >
+                                    Every layer of openQuanta is designed for scientific collaboration and transparent publishing.  Each piece plays a vital role in advancing open research. 
+                                </motion.p>
+                            </div>
+                        </div>
         {/* grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           {featureData.map((feature, index) => (

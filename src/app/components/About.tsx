@@ -1,0 +1,223 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+
+import { motion } from "framer-motion";
+
+const AboutUs = () => {
+  return (
+    <section className="relative w-full bg-black text-white py-24 px-6 md:px-12 lg:px-16 overflow-hidden ">
+      
+      {/* Background animation */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        {/* Purple Blob */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, 50, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-purple-900/30 blur-[100px]"
+        />
+        {/* Pink/Red Blob */}
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2],
+            x: [0, -30, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute bottom-[10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-rose-900/20 blur-[100px]"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        
+        {/* Header Section */}
+        <div className="mb-16 md:mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+           className="text-purple-400 text-lg font-medium mb-4 block"
+          >
+            About Us
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl  text-white mb-6 md:mb-8 tracking-tight leading-tight max-w-2xl"
+          >
+            Building Blocks For Open Science
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mb-8"
+          >
+            We've seen quality research die in desk drawers, brilliant minds give away credit just to get published, geographic bias beers good researchers, curators plagued by perverse incentives and as distributors they are often paywalled. Here researchers publish without intermediaries, control their work, secure authorship with
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors flex items-center gap-2"
+          >
+            Publish now
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 16 16" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block"
+            >
+              <path 
+                d="M6 12L10 8L6 4" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.button>
+        </div>
+
+        {/* Grid Layout - Masonry Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          
+          {/* Large Card - Our Story (spans 2 rows on large screens) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative lg:row-span-2 h-[400px] md:h-[500px] lg:h-full overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20">
+              <Image
+                src="/images/story.png"
+                alt="Our Story"
+                fill
+                className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            
+            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+                Our Story
+              </h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
+                We're committed to making knowledge universally accessible, committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Our Mission Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="relative h-[300px] md:h-[350px] overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10">
+              <Image
+                src="/images/mission.png"
+                alt="Our Mission"
+                fill
+                className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            
+            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                Our mission
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                We're committed to making knowledge universally accessible. More.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Our Vision Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="relative h-[300px] md:h-[350px] overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10">
+              <Image
+                src="/images/vision.png"
+                alt="Our Vision"
+                fill
+                className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            
+            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                Our vision
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                We're committed to making knowledge universally accessible, making knowledge.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Our Value Card (spans 2 columns on medium+ screens) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="relative md:col-span-2 h-[300px] md:h-[350px] overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10">
+              <Image
+                src="/images/value.png"
+                alt="Our Value"
+                fill
+                className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            
+            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                Our Value
+              </h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
+                We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;

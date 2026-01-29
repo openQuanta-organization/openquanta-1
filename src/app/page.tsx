@@ -6,6 +6,7 @@ import Hero from "@/app/components/Hero";
 import LogosSlider from "@/app/components/LogosSlider";
 import BuildingBlocks from "@/app/components/BuildingBlocks";
 import Features from "@/app/components/Features";
+import About from "@/app/components/About";
 import Testimonials from "@/app/components/Testimonials";
 import Footer from "@/app/components/Footer";
 import HowItWorks from "./components/howitworks";
@@ -18,6 +19,7 @@ export default function Home() {
       <LogosSlider />
       <BuildingBlocks />
       <Features />
+        <About />
       <HowItWorks />
       <Testimonials />
       <Footer />
