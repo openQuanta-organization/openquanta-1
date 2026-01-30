@@ -9,28 +9,28 @@ const Features = () => {
     {
       title: "Sharing with colleagues with collea",
       description: "Companies invest in security measures to ensure continuity, comply with legal requirements, and preserve customer trust.",
-      imageSrc: "/images/share.svg",
+      imageSrc: "/images/imageone.png",
       width: 800,
       height: 600,
     },
     {
       title: "Paper Submitted for Review",
       description: "Companies invest in security measures ensure continuity, comply with legal requirements, and preserve customer trust However, these.",
-      imageSrc: "/images/publish.svg",
+      imageSrc: "/images/imagetwo.png",
       width: 800,
       height: 600,
     },
     {
       title: "Review analytics and data",
       description: "Companies invest in security measures to ensure continuity, comply with legal requirements, and preserve customer trust.",
-      imageSrc: "/images/review-card.svg",
+      imageSrc: "/images/imagethree.png",
       width: 800,
       height: 600,
     },
     {
       title: "Dashboard customization",
       description: "Companies invest in security measures ensure continuity, comply with legal requirements, and preserve customer trust However, these.",
-      imageSrc: "/images/user-profile.svg",
+      imageSrc: "/images/imagefour.png",
       width: 800,
       height: 600,
     },
@@ -53,7 +53,7 @@ const Features = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-purple-900/30 blur-[100px]"
+          className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full "
         />
         {/* Pink/Red Blob */}
         <motion.div
@@ -69,7 +69,7 @@ const Features = () => {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute bottom-[10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-rose-900/20 blur-[100px]"
+          className="absolute bottom-[10%] right-[-10%] w-[40vw] h-[40vw] rounded-full"
         />
       </div>
 

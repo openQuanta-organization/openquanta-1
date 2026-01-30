@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <section className="relative w-full bg-black text-white py-24 px-6 md:px-12 lg:px-16 overflow-hidden ">
+    <section className="relative w-full bg-black text-white py-24 px-6 md:px-12 lg:px-16 overflow-hidden " id="about">
       
       {/* Background animation */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
@@ -23,7 +23,7 @@ const AboutUs = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-purple-900/30 blur-[100px]"
+          className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full "
         />
         {/* Pink/Red Blob */}
         <motion.div
@@ -103,8 +103,10 @@ const AboutUs = () => {
           </motion.button>
         </div>
 
-        {/* Grid Layout - Masonry Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      {/* Grid Layout - Masonry Style */}
+       {/* Grid Layout - Masonry Style */}
+      {/* Grid Layout - Masonry Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           
           {/* Large Card - Our Story (spans 2 rows on large screens) */}
           <motion.div
@@ -112,24 +114,42 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative lg:row-span-2 h-[400px] md:h-[500px] lg:h-full overflow-hidden group"
+            className="relative lg:row-span-2"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20">
-              <Image
-                src="/images/story.png"
-                alt="Our Story"
-                fill
-                className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            
-            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-                Our Story
-              </h3>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
-                We're committed to making knowledge universally accessible, committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
-              </p>
+            {/* Border wrapper with padding */}
+            <div className="relative p-4">
+              {/* Left Border */}
+              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Right Border */}
+              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Decorative dots */}
+              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              
+              {/* Actual Card */}
+              <div className="relative h-[500px] md:h-[600px] lg:h-[750px] overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20">
+                  <Image
+                    src="/images/story.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+                    Our Story
+                  </h3>
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md">
+                    We're committed to making knowledge universally accessible, committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -139,24 +159,42 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="relative h-[300px] md:h-[350px] overflow-hidden group"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10">
-              <Image
-                src="/images/mission.png"
-                alt="Our Mission"
-                fill
-                className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            
-            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
-                Our mission
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                We're committed to making knowledge universally accessible. More.
-              </p>
+            {/* Border wrapper with padding */}
+            <div className="relative p-4">
+              {/* Left Border */}
+              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Right Border */}
+              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Decorative dots */}
+              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              
+              {/* Actual Card */}
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10">
+                  <Image
+                    src="/images/mission.png"
+                    alt="Our Mission"
+                    fill
+                    className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                    Our mission
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    We're committed to making knowledge universally accessible. More.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -166,24 +204,42 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative h-[300px] md:h-[350px] overflow-hidden group"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10">
-              <Image
-                src="/images/vision.png"
-                alt="Our Vision"
-                fill
-                className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            
-            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
-                Our vision
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                We're committed to making knowledge universally accessible, making knowledge.
-              </p>
+            {/* Border wrapper with padding */}
+            <div className="relative p-4">
+              {/* Left Border */}
+              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Right Border */}
+              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Decorative dots */}
+              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              
+              {/* Actual Card */}
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10">
+                  <Image
+                    src="/images/vision.png"
+                    alt="Our Vision"
+                    fill
+                    className="object-cover mix-blend-overlay opacity-60 group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                    Our vision
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    We're committed to making knowledge universally accessible, making knowledge.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -193,24 +249,47 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="relative md:col-span-2 h-[300px] md:h-[350px] overflow-hidden group"
+            className="relative md:col-span-2"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10">
-              <Image
-                src="/images/value.png"
-                alt="Our Value"
-                fill
-                className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            
-            <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
-                Our Value
-              </h3>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
-                We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
-              </p>
+            {/* Border wrapper with padding */}
+            <div className="relative p-4">
+              {/* Top Border - ONLY for this card */}
+              <div className="absolute left-6 right-6 top-0 h-[1px] bg-white/25"></div>
+              
+              {/* Left Border */}
+              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Right Border */}
+              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              
+              {/* Decorative dots - with top corners included */}
+              <div className="absolute left-6 top-0 w-1.5 h-1.5 rounded-full bg-white/40 -translate-y-[2px]"></div>
+              <div className="absolute right-6 top-0 w-1.5 h-1.5 rounded-full bg-white/40 -translate-y-[2px]"></div>
+              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              
+              {/* Actual Card */}
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10">
+                  <Image
+                    src="/images/value.png"
+                    alt="Our Value"
+                    fill
+                    className="object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                    Our Value
+                  </h3>
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
+                    We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible. We're committed to making knowledge universally accessible.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

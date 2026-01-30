@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     { name: 'Marketplace', href: '/marketplace', badge: 'Coming Soon' },
     { name: 'Blogs', href: '/blog' },
     { name: 'Docs', href: '#' },
-    { name: 'About', href: '/about' },
+    { name: 'About', href: '#about' },
   ];
 
   const menuVariants: Variants = {

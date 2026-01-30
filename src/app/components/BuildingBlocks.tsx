@@ -89,15 +89,25 @@ const BuildingBlocks = () => {
                                     <h3 className="text-6xl font-light text-white tracking-tighter">
                                         {block.stat}
                                     </h3>
-                                    <button
+                                    {/* <button
                                         onClick={() => toggleIndex(index)}
-                                        className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                                       className="w-10 h-10 rounded-full border border-white/30 bg-white/15 flex items-center justify-center text-gray-100 hover:text-white hover:bg-white/25 transition-all"
                                     >
                                         {isOpen ? <Minus size={20} strokeWidth={0.5} /> : <Plus strokeWidth={0.5} size={20} />}
-                                    </button>
+                                    </button> */}
+                                      <span 
+                                       onClick={() => toggleIndex(index)}
+                                      className="ml-4 shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-gray-400">
+                                                  {openIndex === index ? (
+                                                    <Minus className="w-4 h-4" />
+                                                  ) : (
+                                                    <Plus className="w-4 h-4" />
+                                                  )}
+                                                </span>
+                                    
                                 </div>
 
-                                {/* Content */}
+                                {/* Contents */}
                                 <div className="min-h-[140px]">
                                     <p className="text-gray-400 text-lg leading-relaxed mb-8">
                                         {block.problem}
