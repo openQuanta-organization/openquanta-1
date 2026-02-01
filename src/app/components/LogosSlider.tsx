@@ -3,17 +3,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import './style.css'
 const logos = [
-  { id: 1, name: "Sorare", src: "/icons/sorare.svg" },
-  { id: 2, name: "Visa", src: "/icons/visa.svg" },
-  { id: 3, name: "Ness", src: "/icons/ness.svg" },
-  { id: 4, name: "Unqork", src: "/icons/unqork.svg" },
-  { id: 5, name: "Superteam", src: "/icons/superteam.svg" },
-  { id: 6, name: "Stitch", src: "/icons/stitch.svg" },
-  { id: 7, name: "Solana", src: "/icons/solana.svg" },
-  { id: 8, name: "Vital", src: "/icons/vital.svg" },
-  { id: 9, name: "Resly", src: "/icons/resly.svg" },
-  { id: 10, name: "Humaans", src: "/icons/humaans.svg" },
+  // { id: 1, name: "Sorare", src: "/icons/sorare.svg" },
+  // { id: 2, name: "Visa", src: "/icons/visa.svg" },
+  // { id: 3, name: "Ness", src: "/icons/ness.svg" },
+  // { id: 4, name: "Unqork", src: "/icons/unqork.svg" },
+  { id: 1, name: "Superteam", src: "/icons/mainsuperteam.png" },
+  // { id: 6, name: "Stitch", src: "/icons/stitch.svg" },
+  { id: 2, name: "Solana", src: "/icons/solanatwo.png" },
+  // { id: 8, name: "Vital", src: "/icons/vital.svg" },
+  // { id: 9, name: "Resly", src: "/icons/resly.svg" },
+  // { id: 10, name: "Humaans", src: "/icons/humaans.svg" },
+  { id: 3, name: "Research", src: "/icons/research.png" },
+  { id: 4, name: "College", src: "/icons/college.png" },
+  { id: 5, name: "Cyreneai", src: "/icons/cyreneai.png" },
 ];
 
 const mobileScrollData = [...logos, ...logos];
@@ -68,9 +72,9 @@ const LogosSlider = () => {
                 <Image
                   src={logo.src}
                   alt={logo.name}
-                  width={128}
-                  height={40}
-                  className="object-contain"
+                  width={228}
+                  height={80}
+                  className="object-contaidn dottwo"
                 />
               </div>
             ))}
