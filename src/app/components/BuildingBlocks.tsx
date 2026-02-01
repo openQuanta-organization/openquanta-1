@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
 // ─── useCounter Hook ────────────────────────────────────────
-const useCounter = (target, duration = 2800) => {
-  const [count, setCount] = useState(0);
-  const animationRef = useRef(null);
-  const startTimeRef = useRef(null);
+const useCounter = (target: number, duration: number = 2800) => {
+  const [count, setCount] = useState<number>(0);
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
 
   const animate = useCallback(() => {
     if (!startTimeRef.current) startTimeRef.current = performance.now();
@@ -39,7 +39,7 @@ const useCounter = (target, duration = 2800) => {
 };
 
 // ─── Animated Stat Display ──────────────────────────────────
-const AnimatedStat = ({ stat, isVisible }) => {
+const AnimatedStat = ({ stat, isVisible }: { stat: string; isVisible: boolean }) => {
   const numericValue = parseInt(stat.replace(/[^0-9]/g, ""), 10);
   const suffix = stat.replace(/[0-9]/g, "");
   const { count, startAnimation } = useCounter(numericValue, 2800);
