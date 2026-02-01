@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import './style.css'
 
 import { motion } from "framer-motion";
 
@@ -119,19 +120,19 @@ const AboutUs = () => {
             {/* Border wrapper with padding */}
             <div className="relative p-4">
               {/* Left Border */}
-              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[600px] lg:h-[760px] "></div>
               
               {/* Right Border */}
-              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute right-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[600px] lg:h-[760px] "></div>
               
               {/* Decorative dots */}
-              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
-              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px]"></div>
+              <div className="absolute right-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-5 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-5 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px]"></div>
               
               {/* Actual Card */}
-              <div className="relative h-[500px] md:h-[600px] lg:h-[750px] overflow-hidden group">
+              <div className="relative h-[500px] md:h-[600px] lg:h-[772px] overflow-hidden group ">
                 <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20">
                   <Image
                     src="/images/story.png"
@@ -163,21 +164,21 @@ const AboutUs = () => {
           >
             {/* Border wrapper with padding */}
             <div className="relative p-4">
-              {/* Left Border */}
-              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+             {/* Left Border */}
+              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[760px] "></div>
               
               {/* Right Border */}
-              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute right-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[350px] "></div>
               
               {/* Decorative dots */}
-              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
-              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px] "></div>
+              <div className="absolute right-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px]"></div>
+              <div className="absolute left-0 bottom-3 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px] md:hidden"></div>
+              <div className="absolute right-0 bottom-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px]"></div>
               
               {/* Actual Card */}
-              <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10">
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden group ">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/5">
                   <Image
                     src="/images/mission.png"
                     alt="Our Mission"
@@ -209,19 +210,19 @@ const AboutUs = () => {
             {/* Border wrapper with padding */}
             <div className="relative p-4">
               {/* Left Border */}
-              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[350px]"></div>
               
               {/* Right Border */}
-              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute right-0 top-4 bottom-6 w-[1px]  bg-white/25   md:h-[760px] dottwdo"></div>
               
               {/* Decorative dots */}
-              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
-              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px] "></div>
+              <div className="absolute right-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px] "></div>
+              <div className="absolute left-0 bottom-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px] md:hidden"></div>
               
               {/* Actual Card */}
-              <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden group ">
                 <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10">
                   <Image
                     src="/images/vision.png"
@@ -254,21 +255,21 @@ const AboutUs = () => {
             {/* Border wrapper with padding */}
             <div className="relative p-4">
               {/* Top Border - ONLY for this card */}
-              <div className="absolute left-6 right-6 top-0 h-[1px] bg-white/25"></div>
+              <div className="absolute left-2 right-2 top-0 h-[2px] bg-white/25 dotp"></div>
               
               {/* Left Border */}
-              <div className="absolute left-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:hidden "></div>
               
               {/* Right Border */}
-              <div className="absolute right-0 top-6 bottom-6 w-[1px] bg-white/25"></div>
+              <div className="absolute right-0 top-4 bottom-6 w-[1px] bg-white/25 md:hidden"></div>
               
               {/* Decorative dots - with top corners included */}
-              <div className="absolute left-6 top-0 w-1.5 h-1.5 rounded-full bg-white/40 -translate-y-[2px]"></div>
-              <div className="absolute right-6 top-0 w-1.5 h-1.5 rounded-full bg-white/40 -translate-y-[2px]"></div>
-              <div className="absolute left-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 top-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
-              <div className="absolute left-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 -translate-x-[2px]"></div>
-              <div className="absolute right-0 bottom-6 w-1.5 h-1.5 rounded-full bg-white/40 translate-x-[2px]"></div>
+              <div className="absolute left-2 -top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-y-[2px]"></div>
+              <div className="absolute right-2 -top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-y-[2px]"></div>
+              <div className="absolute left-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px] md:hidden"></div>
+              <div className="absolute right-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px] md:hidden"></div>
+              <div className="absolute left-0 bottom-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px]"></div>
+              <div className="absolute right-0 bottom-4 w-1.5 h-1.5 rounded-full bg-white/100 translate-x-[2px]"></div>
               
               {/* Actual Card */}
               <div className="relative h-[300px] md:h-[350px] overflow-hidden group">

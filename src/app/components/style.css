@@ -1,0 +1,21 @@
+.dotp{
+    /* border: 2px solid #ff0000; */
+    margin-top: -15px;
+}
+.dottwo{
+     border: 2px solid #ff0000;
+}
+.myimg{
+    /* border: 2px solid red; */
+    height:400px;
+}
+@media (max-width: 768px) {
+    .myimg{
+        height:300px;
+    }
+    .roundbtn{
+     border-radius: 50%;
+     padding: 15px;
+     margin-left: -38px;
+}
+}

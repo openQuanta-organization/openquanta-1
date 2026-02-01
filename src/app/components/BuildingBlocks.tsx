@@ -1,22 +1,96 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
+// ─── useCounter Hook ────────────────────────────────────────
+const useCounter = (target, duration = 2800) => {
+  const [count, setCount] = useState(0);
+  const animationRef = useRef(null);
+  const startTimeRef = useRef(null);
+
+  const animate = useCallback(() => {
+    if (!startTimeRef.current) startTimeRef.current = performance.now();
+    const elapsed = performance.now() - startTimeRef.current;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    setCount(Math.round(eased * target));
+
+    if (progress < 1) {
+      animationRef.current = requestAnimationFrame(animate);
+    }
+  }, [target, duration]);
+
+  const startAnimation = useCallback(() => {
+    if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    startTimeRef.current = null;
+    setCount(0);
+    animationRef.current = requestAnimationFrame(animate);
+  }, [animate]);
+
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, []);
+
+  return { count, startAnimation };
+};
+
+// ─── Animated Stat Display ──────────────────────────────────
+const AnimatedStat = ({ stat, isVisible }) => {
+  const numericValue = parseInt(stat.replace(/[^0-9]/g, ""), 10);
+  const suffix = stat.replace(/[0-9]/g, "");
+  const { count, startAnimation } = useCounter(numericValue, 2800);
+
+  useEffect(() => {
+    if (isVisible) {
+      startAnimation();
+    }
+  }, [isVisible, startAnimation]);
+
+  return (
+    <h3 className="text-6xl font-light text-white tracking-tighter tabular-nums">
+      {count}{suffix}
+    </h3>
+  );
+};
+
+// ─── Main Component ─────────────────────────────────────────
 const BuildingBlocks = () => {
-    // State to track which card is open. 
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     const toggleIndex = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    // Intersection observer — restarts counter every time section enters view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(false);
+                    const timeout = setTimeout(() => setIsVisible(true), 50);
+                    return () => clearTimeout(timeout);
+                } else {
+                    setIsVisible(false);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     const blocks = [
         {
             stat: "72%",
             title: "Access Gap",
-            problem: "Valuable academic research is inaccessible to most - we’re committed to making knowledge universally accessible.",
+            problem: "Valuable academic research is inaccessible to most - we're committed to making knowledge universally accessible.",
             approach: "We use decentralized storage and token-gated access (QPT) to ensure research remains permanent, uncensorable, and affordable."
         },
         {
@@ -72,40 +146,38 @@ const BuildingBlocks = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {blocks.map((block, index) => {
                         const isOpen = openIndex === index;
                         return (
                             <div
                                 key={index}
                                 className={`
-                  relative p-8 group transition-colors duration-500 border  border-white/10
-                  ${index !== 2 ? '' : ''} // Vertical borders between cards
+                  relative p-8 group transition-all duration-500 border border-white/10
+                  ${index !== 2 ? '' : ''}
                   hover:bg-white/[0.02]
+                  hover:border-purple-500/40
+                  hover:shadow-[0_0_25px_rgba(139,92,246,0.15),inset_0_0_25px_rgba(139,92,246,0.05)]
                 `}
                             >
                                 {/* Top Row: Stat + Toggle */}
                                 <div className="flex justify-between items-start mb-6">
-                                    <h3 className="text-6xl font-light text-white tracking-tighter">
-                                        {block.stat}
-                                    </h3>
-                                    {/* <button
-                                        onClick={() => toggleIndex(index)}
-                                       className="w-10 h-10 rounded-full border border-white/30 bg-white/15 flex items-center justify-center text-gray-100 hover:text-white hover:bg-white/25 transition-all"
-                                    >
-                                        {isOpen ? <Minus size={20} strokeWidth={0.5} /> : <Plus strokeWidth={0.5} size={20} />}
-                                    </button> */}
-                                      <span 
+                                    <AnimatedStat stat={block.stat} isVisible={isVisible} />
+                                    <span 
                                        onClick={() => toggleIndex(index)}
-                                      className="ml-4 shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-gray-400">
+                                      className="ml-4 shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-gray-400 cursor-pointer">
                                                   {openIndex === index ? (
                                                     <Minus className="w-4 h-4" />
                                                   ) : (
                                                     <Plus className="w-4 h-4" />
                                                   )}
                                                 </span>
-                                    
                                 </div>
+
+                                {/* Title */}
+                                <p className="text-white text-lg font-semibold mb-3">
+                                    {block.title}
+                                </p>
 
                                 {/* Contents */}
                                 <div className="min-h-[140px]">
@@ -114,7 +186,7 @@ const BuildingBlocks = () => {
                                     </p>
                                 </div>
 
-                                {/*Approach Section */}
+                                {/* Approach Section */}
                                 <AnimatePresence>
                                     {isOpen && (
                                         <motion.div

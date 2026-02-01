@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, CornerDownRight, Plus, Minus } from "lucide-react";
-
+import './style.css'
 const FAQ = () => {
   // State to track which FAQ item is open (null = all closed)
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -69,7 +69,7 @@ const FAQ = () => {
           
           <div className="relative flex items-center w-full bg-[#0A0A0A] border border-white/10 rounded-full px-2 py-2 shadow-2xl">
             {/* Left Icon & Divider */}
-            <div className="flex items-center pl-4 pr-3 gap-3">
+            <div className="flex items-center pl-4 pr-3 gap-3 ">
               <Search className="w-5 h-5 text-gray-500" />
               <div className="h-6 w-px bg-gray-700/50" />
             </div>
@@ -82,7 +82,7 @@ const FAQ = () => {
             />
 
             {/* Right Action Button */}
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-300 hover:bg-white transition-colors duration-200 group/btn">
+            <button className="roundbtn flex items-center justify-center w-12 h-12 rounded-full bg-gray-300 hover:bg-white transition-colors duration-200 group/btn">
               <CornerDownRight className="w-5 h-5 text-black transition-transform duration-200 group-hover/btn:-rotate-90" />
             </button>
           </div>

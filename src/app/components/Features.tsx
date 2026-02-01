@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import './style.css'
 
 const Features = () => {
   const featureData = [
@@ -129,17 +130,17 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="flex flex-col group"
+              className="flex flex-col group "
             >
 
               {/* image container */}
-              <div className="relative w-full bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/5 overflow-hidden mb-8 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl ">
+              <div className=" relative w-full bg-[#0A0A0A]/50 backdrop-blur-sm border border-white/5 overflow-hidden mb-8 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl ">
                 <Image
                   src={feature.imageSrc}
                   alt={feature.title}
                   width={feature.width}
                   height={feature.height}
-                  className="w-full h-auto hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto hover:scale-105 transition-transform duration-500 myimg"
                 />
 
               </div>
