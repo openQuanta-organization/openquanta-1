@@ -5,19 +5,34 @@
 .dottwo{
      /* border: 2px solid #ff0000; */
      width: 100%;
-     height: 60px;
+     /* height: 60px; */
 }
 .myimg{
     /* border: 2px solid red; */
     height:400px;
+      width: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Fits inside without cropping */
 }
 @media (max-width: 768px) {
     .myimg{
-        height:300px;
+        height:270px;
+         width: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Fits inside without cropping */
+  /* object-fit: cover;  */
     }
     .roundbtn{
      border-radius: 50%;
      padding: 15px;
-     margin-left: -38px;
+     margin-left: -65px;
+     /* border: 2px solid red; */
 }
+}
+/* Tablets only (767px to 1023px) */
+@media (min-width: 767px) and (max-width: 1024px) {
+.dro{
+    /* border: 2px solid red; */
+}
+}
+.droo{
+    /* border: 2px solid red;  */
 }

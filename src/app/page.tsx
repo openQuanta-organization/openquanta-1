@@ -9,7 +9,7 @@ import Features from "@/app/components/Features";
 import About from "@/app/components/About";
 import Testimonials from "@/app/components/Testimonials";
 import Footer from "@/app/components/Footer";
-import HowItWorks from "./components/howitworks";
+// import HowItWorks from "./components/howitworks";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <BuildingBlocks />
       <Features />
         <About />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <Testimonials />
       <Footer />
     </main>
