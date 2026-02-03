@@ -10,32 +10,32 @@ const Features = () => {
     {
       title: "Sharing with colleagues with collea",
       description: "Companies invest in security measures to ensure continuity, comply with legal requirements, and preserve customer trust.",
-      imageSrc: "/images/imageone.png",
+      imageSrc: "/images/share.svg",
       width: 800,
       height: 600,
     },
     {
       title: "Paper Submitted for Review",
       description: "Companies invest in security measures ensure continuity, comply with legal requirements, and preserve customer trust However, these.",
-      imageSrc: "/images/imagetwo.png",
+      imageSrc: "/images/publish.svg",
       width: 800,
       height: 600,
     },
     {
       title: "Review analytics and data",
       description: "Companies invest in security measures to ensure continuity, comply with legal requirements, and preserve customer trust.",
-      imageSrc: "/images/imagethree.png",
+      imageSrc: "/images/review-card.svg",
       width: 800,
       height: 600,
     },
     {
       title: "Dashboard customization",
       description: "Companies invest in security measures ensure continuity, comply with legal requirements, and preserve customer trust However, these.",
-      imageSrc: "/images/imagefour.png",
+      imageSrc: "/images/user-profile.svg",
       width: 800,
       height: 600,
     },
-  ];
+  ]
 
   return (
     <section className="relative w-full bg-black text-white py-24 px-6 md:px-12 overflow-hidden">

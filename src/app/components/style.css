@@ -7,18 +7,19 @@
      width: 100%;
      /* height: 60px; */
 }
-.myimg{
-    /* border: 2px solid red; */
+/* .myimg{
+    border: 2px solid red;
     height:400px;
-      width: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Fits inside without cropping */
-}
+      width: auto; 
+    object-fit: contain
+} */
 @media (max-width: 768px) {
     .myimg{
-        height:270px;
-         width: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Fits inside without cropping */
-  /* object-fit: cover;  */
+         object-fit: cover; 
+        /* height:270px; */
+         width: auto;
+ 
+   /* border: 2px solid red;  */
     }
     .roundbtn{
      border-radius: 50%;
