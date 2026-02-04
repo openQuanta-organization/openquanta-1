@@ -145,71 +145,71 @@ const BuildingBlocks = () => {
                     </div>
                 </div>
 
-                {/* Stats Grid */}
-                <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {blocks.map((block, index) => {
-                        const isOpen = openIndex === index;
-                        return (
-                            <div
-                                key={index}
-                                className={`
+             {/* Stats Grid */}
+<div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {blocks.map((block, index) => {
+        const isOpen = openIndex === index;
+        return (
+            <div
+                key={index}
+                className={`
                   relative p-8 group transition-all duration-500 border border-white/10
                   ${index !== 2 ? '' : ''}
-                  hover:bg-white/[0.02]
+                  hover:bg-white/40
                   hover:border-purple-500/40
                   hover:shadow-[0_0_25px_rgba(139,92,246,0.15),inset_0_0_25px_rgba(139,92,246,0.05)]
                 `}
-                            >
-                                {/* Top Row: Stat + Toggle */}
-                                <div className="flex justify-between items-start mb-6">
-                                    <AnimatedStat stat={block.stat} isVisible={isVisible} />
-                                    <span 
-                                       onClick={() => toggleIndex(index)}
-                                      className="ml-4 shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-gray-400 cursor-pointer">
-                                                  {openIndex === index ? (
-                                                    <Minus className="w-4 h-4" />
-                                                  ) : (
-                                                    <Plus className="w-4 h-4" />
-                                                  )}
-                                                </span>
-                                </div>
-
-                                {/* Title */}
-                                <p className="text-white text-lg font-semibold mb-3">
-                                    {block.title}
-                                </p>
-
-                                {/* Contents */}
-                                <div className="min-h-[140px]">
-                                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                                        {block.problem}
-                                    </p>
-                                </div>
-
-                                {/* Approach Section */}
-                                <AnimatePresence>
-                                    {isOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="pt-6">
-                                                <span className="text-purple-400 text-sm font-bold uppercase tracking-wider mb-2 block">
-                                                    Our Approach
-                                                </span>
-                                                <p className="text-gray-300 leading-relaxed">
-                                                    {block.approach}
-                                                </p>
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        );
-                    })}
+            >
+                {/* Top Row: Stat + Toggle */}
+                <div className="flex justify-between items-start mb-6">
+                    <AnimatedStat stat={block.stat} isVisible={isVisible} />
+                    <span 
+                       onClick={() => toggleIndex(index)}
+                      className="ml-4 shrink-0 flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/5 text-gray-400 cursor-pointer">
+                                  {openIndex === index ? (
+                                    <Minus className="w-4 h-4" />
+                                  ) : (
+                                    <Plus className="w-4 h-4" />
+                                  )}
+                                </span>
                 </div>
+
+                {/* Title */}
+                <p className="text-white text-lg font-semibold mb-3">
+                    {block.title}
+                </p>
+
+                {/* Contents */}
+                <div className="min-h-[140px]">
+                    <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                        {block.problem}
+                    </p>
+                </div>
+
+                {/* Approach Section */}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="pt-6">
+                                <span className="text-purple-400 text-sm font-bold uppercase tracking-wider mb-2 block">
+                                    Our Approach
+                                </span>
+                                <p className="text-gray-300 leading-relaxed">
+                                    {block.approach}
+                                </p>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        );
+    })}
+</div>
             </div>
         </section>
     );

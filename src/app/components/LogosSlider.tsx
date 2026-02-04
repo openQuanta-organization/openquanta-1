@@ -11,13 +11,13 @@ const logos = [
   // { id: 4, name: "Unqork", src: "/icons/unqork.svg" },
   { id: 1, name: "Superteam", src: "/icons/mainsuperteam.png" },
   // { id: 6, name: "Stitch", src: "/icons/stitch.svg" },
-  { id: 2, name: "Solana", src: "/icons/solanatwo.png" },
+  { id: 2, name: "Solana", src: "/icons/solanatwo.svg" },
   // { id: 8, name: "Vital", src: "/icons/vital.svg" },
   // { id: 9, name: "Resly", src: "/icons/resly.svg" },
   // { id: 10, name: "Humaans", src: "/icons/humaans.svg" },
-  { id: 3, name: "Research", src: "/icons/research.png" },
-  { id: 4, name: "College", src: "/icons/college.png" },
-  { id: 5, name: "Cyreneai", src: "/icons/cyreneai.png" },
+  { id: 3, name: "Research", src: "/icons/research.svg" },
+  { id: 4, name: "College", src: "/icons/college.svg" },
+  { id: 5, name: "Cyreneai", src: "/icons/cyreneai.svg" },
 ];
 
 const mobileScrollData = [...logos, ...logos];
