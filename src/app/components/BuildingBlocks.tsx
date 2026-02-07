@@ -145,7 +145,7 @@ const BuildingBlocks = () => {
                     </div>
                 </div>
 
-             {/* Stats Grid */}
+{/* Stats Grid */}
 <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
     {blocks.map((block, index) => {
         const isOpen = openIndex === index;
@@ -154,8 +154,8 @@ const BuildingBlocks = () => {
                 key={index}
                 className={`
                   relative p-8 group transition-all duration-500 border border-white/10
-                  ${index !== 2 ? '' : ''}
-                  hover:bg-white/40
+                  bg-white/40
+                  hover:bg-white/80
                   hover:border-purple-500/40
                   hover:shadow-[0_0_25px_rgba(139,92,246,0.15),inset_0_0_25px_rgba(139,92,246,0.05)]
                 `}

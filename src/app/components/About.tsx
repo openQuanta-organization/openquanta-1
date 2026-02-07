@@ -120,10 +120,10 @@ const AboutUs = () => {
             {/* Border wrapper with padding */}
             <div className="relative p-4">
               {/* Left Border */}
-              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[760px] lg:h-[760px] "></div>
+              <div className="absolute left-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[760px] lg:h-[770px] "></div>
               
               {/* Right Border */}
-              <div className="absolute right-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[760px] lg:h-[760px] "></div>
+              <div className="absolute right-0 top-4 bottom-6 w-[1px] bg-white/25 md:h-[760px] lg:h-[770px] "></div>
               
               {/* Decorative dots */}
               <div className="absolute left-0 top-4 w-1.5 h-1.5 rounded-full bg-white/100 -translate-x-[2px] "></div>
@@ -133,7 +133,7 @@ const AboutUs = () => {
               
               {/* Actual Card */}
               <div className="relative h-[500px] md:h-[350px] lg:h-[772px] overflow-hidden group ">
-                <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20">
+                <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/40 to-black/20 bgcolor">
                   <Image
                     src="/images/story.png"
                     alt="Our Story"
@@ -178,7 +178,7 @@ const AboutUs = () => {
               
               {/* Actual Card */}
               <div className="relative h-[300px] md:h-[350px] overflow-hidden group ">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/5">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/5 bgcolor">
                   <Image
                     src="/images/mission.png"
                     alt="Our Mission"
@@ -223,7 +223,7 @@ const AboutUs = () => {
               
               {/* Actual Card */}
               <div className="relative h-[300px] md:h-[350px] overflow-hidden group ">
-                <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10">
+                <div className="absolute inset-0 bg-gradient-to-b from-amber-900/40 to-black/10 bgcolor">
                   <Image
                     src="/images/vision.png"
                     alt="Our Vision"
@@ -273,7 +273,7 @@ const AboutUs = () => {
               
               {/* Actual Card */}
               <div className="relative h-[300px] md:h-[350px] overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/10 bgcolor">
                   <Image
                     src="/images/value.png"
                     alt="Our Value"
